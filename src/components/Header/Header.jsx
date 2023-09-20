@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -12,18 +12,36 @@ const Header = () => {
               <path d="M22.094 19.451h-0.758c-0.188 0-0.363 0.049-0.515 0.135l0.006-0.004-4.574 2.512-5.282-3.049v-6.082l5.282-3.051 4.576 2.504c0.146 0.082 0.323 0.131 0.508 0.131h0.758c0.293 0 0.529-0.239 0.529-0.531v-0.716c0-0.2-0.11-0.373-0.271-0.463l-0.004-0.002-5.078-2.777c-0.293-0.164-0.645-0.26-1.015-0.26-0.39 0-0.756 0.106-1.070 0.289l0.010-0.006-5.281 3.049c-0.636 0.375-1.056 1.055-1.059 1.834v6.082c0 0.779 0.422 1.461 1.049 1.828l0.009 0.006 5.281 3.049c0.305 0.178 0.67 0.284 1.061 0.284 0.373 0 0.723-0.098 1.027-0.265l-0.012 0.006 5.080-2.787c0.166-0.091 0.276-0.265 0.276-0.465v-0.716c0-0.293-0.238-0.529-0.529-0.529z"></path>
             </svg>
           </a>
-          <ul className="items-stretch hidden space-x-3 lg:flex">
+          <ul className="items-stretch hidden space-x-10 lg:flex ">
             <li className="flex">
-              <Link to="/" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400">Home</Link>
+              <NavLink to="/" className={({ isActive, isPending }) =>
+                isActive ? "flex items-center px-4 mb-1 border-b-2 dark:text-violet-400 dark:border-violet-400"
+                  : isPending ? "flex items-center px-4 mb-1 border-b-2" : ""
+              }>Home</NavLink>
             </li>
             <li className="flex">
-              <Link to="/about" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">About</Link>
+              <NavLink to="/about" className={({ isActive, isPending }) =>
+                isActive ? "flex items-center px-4 mb-1 border-b-2 dark:text-violet-400 dark:border-violet-400"
+                  : isPending ? "flex items-center px-4 mb-1 border-b-2" : ""
+              }>About</NavLink>
             </li>
             <li className="flex">
-              <Link to="/contact" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Contact Us</Link>
+              <NavLink to="/contact" className={({ isActive, isPending }) =>
+                isActive ? "flex items-center px-4 mb-1 border-b-2 dark:text-violet-400 dark:border-violet-400"
+                  : isPending ? "flex items-center px-4 mb-1 border-b-2" : ""
+              }>Contact Us</NavLink>
             </li>
             <li className="flex">
-              <Link to="/users" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Users</Link>
+              <NavLink to="/users" className={({ isActive, isPending }) =>
+                isActive ? "flex items-center px-4 mb-1 border-b-2 dark:text-violet-400 dark:border-violet-400"
+                  : isPending ? "flex items-center px-4 mb-1 border-b-2" : ""
+              }>Users</NavLink>
+            </li>
+            <li className="flex">
+              <NavLink to="/posts" className={({ isActive, isPending }) =>
+                isActive ? "flex items-center px-4 mb-1 border-b-2 dark:text-violet-400 dark:border-violet-400"
+                  : isPending ? "flex items-center px-4 mb-1 border-b-2" : ""
+              }>Posts</NavLink>
             </li>
           </ul>
           <div className="items-center flex-shrink-0 hidden lg:flex">
